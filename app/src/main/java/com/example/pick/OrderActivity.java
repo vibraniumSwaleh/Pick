@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,12 +47,12 @@ public class OrderActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        if (user != null){
 
-        }else{
+        if (user != null) {
+
+        } else {
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
+            super.onStart();
         }
-        super.onStart();
-    }
-}
+    }}
